@@ -1,1 +1,5 @@
-I am About
+@extends('layouts.app')
+@section('title','About')
+@section('content')
+I am about
+@endsection
