@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\mylist;
-
+use Mail;
 class pageController extends Controller
 {
     //
@@ -15,6 +15,13 @@ class pageController extends Controller
         $mylist = new mylist;
         $mylist->name = $request->listname;
         $mylist->save();
+        $data = array('name'=>"Virat Gandhi");
+        Mail::send('mail', $data, function($message) {
+            $message->to('axad03213@gmail.com', 'Asad Mukhtar')->subject
+            ('Checking purpose');
+            $message->from('xyz@gmail.com','Virat Gandhi');
+        });
+        //echo "HTML Email Sent. Check your inbox.";
         return redirect()->back()->with('message','Data Posted Succesfully');
     }
 
