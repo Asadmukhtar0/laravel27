@@ -1,0 +1,19 @@
+
+table{
+    font-family: Calibri; 
+    color:black; 
+    font-size: 11pt; 
+    font-style: normal;
+    font-weight: bold;
+    text-align:center; 
+    background-color:white; 
+    border-collapse: collapse; 
+    border: 2px solid white; 
+  }
+  table.inner{
+    border: 0px
+  }
+  #select{
+    color:black;
+  }
+  

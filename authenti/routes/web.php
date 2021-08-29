@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::prefix('arslan')->middleware('auth')->group(function(){
+    Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});

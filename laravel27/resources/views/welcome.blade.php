@@ -45,6 +45,7 @@
                 </td>
             </tr>
         @endforeach
+        {{ $mylists->links() }}
     </table>
 </div>
 @endsection
