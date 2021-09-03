@@ -8,7 +8,7 @@ class pageController extends Controller
 {
     //
     public function home(){
-        $mylists = mylist::orderby('id','DESC')->paginate(10);
+        $mylists = mylist::orderby('id','DESC')->get();
         return view('welcome', compact('mylists'));
     }
     public function save(Request $request){
