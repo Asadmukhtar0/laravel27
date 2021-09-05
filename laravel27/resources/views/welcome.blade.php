@@ -26,6 +26,7 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Time</tH>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
@@ -33,6 +34,8 @@
             <tr>
                 <td>{{ $mylist->id }}</td>
                 <td>{{ $mylist->name }}</td>
+                <td>{{ $mylist->created_at->diffForHumans() }}</td>
+                <td>{{ $mylist->updated_at->diffForHumans() }}</td>
                 <td>
                     <a href="{{ route('edit',$mylist->id) }}">
                        <button class="btn btn-danger">Edit</button>
